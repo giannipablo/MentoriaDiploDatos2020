@@ -1,6 +1,6 @@
-Practico_3y4_punto_1 
 
-##  **¿De qué se trata el conjunto de datos?**
+
+##  **1. ¿De qué se trata el conjunto de datos?**
 
 El conjunto de datos consiste de diálogos escritos y sincrónicos entre un docente y un estudiante realizado a través de una aplicación de mensajería instantánea desarrollada para este fin. La empresa intermediaria vincula a docentes y estudiantes por medio de dicha aplicación y recolecta los datos de los diálogos para diversos fines, entre ellos el control de la calidad del servicio. Debido a que los alumnos son mayormente de Estados Unidos, los diálogos se encuentran en idioma Inglés mientras que los tutores particulares son de diferentes partes del mundo y no son necesariamente residentes Estadounidenses. El objetivo de los diálogos es brindar soporte a los estudiantes  de nivel secundario en las tareas de asignaturas como matemática, química y física.
 
@@ -8,7 +8,13 @@ El conjunto de datos completo tiene 18 mil diálogos que suman 7 mil horas. Como
 ¿Cuál es la variable objetivo que hay que predecir? ¿Qué significado tiene? ¿Cómo la definieron de forma binaria?
 La variable objetivo es student_rating_cat, a la cual la definimos como una variable binaria que representa la satisfacción o insatisfacción del estudiante luego de una sesión con el tutor. El éxito del diálogo representa/conlleva que el estudiante quedó conforme con la labor del tutor, teniendo en cuenta que la conformidad es una cualidad subjetiva que depende del criterio del estudiante. En el conjunto de datos a la variable objetivo la derivamos del puntaje asignado por el estudiante al diálogo con el tutor. La variable puede tomar valores enteros en el rango del 1 al 5. Para binarizarla consideramos los casos con calificación en el rango 1 al 2 inclusive como caso/clase negativa, los casos con calificación en el rango 4 al 5 inclusive como caso/clase positiva mientras que los casos con calificación igual a 3 serán considerados neutros, y no serán tenidos en cuenta en el análisis. 
 
-## **¿Qué información (atributos) hay disponibles para hacer la predicción?**
+
+## **2. ¿Cuál es la variable objetivo que hay que predecir? ¿Qué significado tiene? ¿Cómo la definieron de forma binaria?**
+La variable objetivo es student_rating_cat, a la cual la definimos como una variable binaria que representa la satisfacción o insatisfacción del estudiante luego de una sesión con el tutor. El éxito del diálogo representa/conlleva que el estudiante quedó conforme con la labor del tutor, teniendo en cuenta que la conformidad es una cualidad subjetiva que depende del criterio del estudiante. En el conjunto de datos a la variable objetivo la derivamos del puntaje asignado por el estudiante al diálogo con el tutor. La variable puede tomar valores enteros en el rango del 1 al 5. Para binarizarla consideramos los casos con calificación en el rango 1 al 2 inclusive como caso/clase negativa, los casos con calificación en el rango 4 al 5 inclusive como caso/clase positiva mientras que los casos con calificación igual a 3 serán considerados neutros, y no serán tenidos en cuenta en el análisis. 
+
+
+
+## **3. ¿Qué información (atributos) hay disponibles para hacer la predicción?**
 
 ### Atributos relativos a la metadata
 
@@ -67,7 +73,7 @@ La variable objetivo es student_rating_cat, a la cual la definimos como una vari
 |avtwlen_student  | Promedio de la cantidad de palabras por turno del estudiante.  | Flotante  |
  | text | Texto del turno tokenizado.  | Lista de cadena de caracteres  |
  
-## 4. ¿Qué atributos imagina usted que pueden ayudar en la predicción?
+## **4. ¿Qué atributos imagina usted que pueden ayudar en la predicción?**
 
 ### Atributos relativos a la metadata
 

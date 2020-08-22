@@ -23,7 +23,7 @@ La variable objetivo es student_rating_cat, a la cual la definimos como una vari
 | tutor_id   | Identificador único de tutor.  |Entero  |
 | student_id   | Identificador único de estudiante.  |Entero |
 | timestamp | Marca de tiempo de inicio de la sesión. |Fecha |
-| feedback_score | Escala 0-1 con la calidad de la sesión puntuada. | Flotante [0,1] |
+| feedback_score | Puntaje de la calidad de la sesión asignada por el estudiante, puede contener valores entre 0 y 1. | Flotante [0,1] |
 | wait_time | Tiempo de espera del estudiante antes de conectar con un tutor, en segundos. | Flotante |
 | ended_by_reason | Acción final sobre cómo terminó la sesión (quién la terminó y cómo). | Categórica |
 | session_category | Categorización detallada del aprendizaje del estudiante. | Categórica |

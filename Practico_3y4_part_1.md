@@ -5,12 +5,10 @@
 El conjunto de datos consiste de diálogos escritos y sincrónicos entre un docente y un estudiante realizado a través de una aplicación de mensajería instantánea desarrollada para este fin. La empresa intermediaria vincula a docentes y estudiantes por medio de dicha aplicación y recolecta los datos de los diálogos para diversos fines, entre ellos el control de la calidad del servicio. Debido a que los alumnos son mayormente de Estados Unidos, los diálogos se encuentran en idioma Inglés mientras que los tutores particulares son de diferentes partes del mundo y no son necesariamente residentes Estadounidenses. El objetivo de los diálogos es brindar soporte a los estudiantes  de nivel secundario en las tareas de asignaturas como matemática, química y física.
 
 El conjunto de datos completo tiene 18 mil diálogos que suman 7 mil horas. Como los diálogos se basan en didáctica "inquiry-based" los docentes hacen muchas preguntas. Hay 240 mil preguntas en el conjunto de datos. Al finalizar el diálogo los estudiantes evalúan cuán satisfechos están con la clase particular con una nota de 1 a 5, con timestamps en cada turno, con información demográfica de los participantes como género, edad, notas en exámenes, tipo de pago del servicio, país, entre otros.
-¿Cuál es la variable objetivo que hay que predecir? ¿Qué significado tiene? ¿Cómo la definieron de forma binaria?
-La variable objetivo es student_rating_cat, a la cual la definimos como una variable binaria que representa la satisfacción o insatisfacción del estudiante luego de una sesión con el tutor. El éxito del diálogo representa/conlleva que el estudiante quedó conforme con la labor del tutor, teniendo en cuenta que la conformidad es una cualidad subjetiva que depende del criterio del estudiante. En el conjunto de datos a la variable objetivo la derivamos del puntaje asignado por el estudiante al diálogo con el tutor. La variable puede tomar valores enteros en el rango del 1 al 5. Para binarizarla consideramos los casos con calificación en el rango 1 al 2 inclusive como caso/clase negativa, los casos con calificación en el rango 4 al 5 inclusive como caso/clase positiva mientras que los casos con calificación igual a 3 serán considerados neutros, y no serán tenidos en cuenta en el análisis. 
 
 
 ## **2. ¿Cuál es la variable objetivo que hay que predecir? ¿Qué significado tiene? ¿Cómo la definieron de forma binaria?**
-La variable objetivo es student_rating_cat, a la cual la definimos como una variable binaria que representa la satisfacción o insatisfacción del estudiante luego de una sesión con el tutor. El éxito del diálogo representa/conlleva que el estudiante quedó conforme con la labor del tutor, teniendo en cuenta que la conformidad es una cualidad subjetiva que depende del criterio del estudiante. En el conjunto de datos a la variable objetivo la derivamos del puntaje asignado por el estudiante al diálogo con el tutor. La variable puede tomar valores enteros en el rango del 1 al 5. Para binarizarla consideramos los casos con calificación en el rango 1 al 2 inclusive como caso/clase negativa, los casos con calificación en el rango 4 al 5 inclusive como caso/clase positiva mientras que los casos con calificación igual a 3 serán considerados neutros, y no serán tenidos en cuenta en el análisis. 
+La variable objetivo es **student_rating**, a la cual la definimos como una variable binaria que representa la satisfacción o insatisfacción del estudiante luego de una sesión con el tutor. El éxito del diálogo representa/conlleva que el estudiante quedó conforme con la labor del tutor, teniendo en cuenta que la conformidad es una cualidad subjetiva que depende del criterio del estudiante. En el conjunto de datos a la variable objetivo la derivamos del puntaje asignado por el estudiante al diálogo con el tutor. La variable puede tomar valores enteros en el rango del 1 al 5. Para binarizarla consideramos los casos con calificación en el rango 1 al 2 inclusive como caso/clase negativa, los casos con calificación en el rango 4 al 5 inclusive como caso/clase positiva mientras que los casos con calificación igual a 3 serán considerados neutros, y no serán tenidos en cuenta en el análisis. 
 
 
 
@@ -25,11 +23,11 @@ La variable objetivo es student_rating_cat, a la cual la definimos como una vari
 | tutor_id   | Identificador único de tutor.  |Entero  |
 | student_id   | Identificador único de estudiante.  |Entero |
 | timestamp | Marca de tiempo de inicio de la sesión. |Fecha |
-| feedback_score | Escala 0-1 con la calidad de la sesión puntuada. | Flotante [0,1] |
+| feedback_score | Puntaje de la calidad de la sesión asignada por el estudiante, puede contener valores entre 0 y 1. | Flotante [0,1] |
 | wait_time | Tiempo de espera del estudiante antes de conectar con un tutor, en segundos. | Flotante |
 | ended_by_reason | Acción final sobre cómo terminó la sesión (quién la terminó y cómo). | Categórica |
 | session_category | Categorización detallada del aprendizaje del estudiante. | Categórica |
-| consolidated_session_category | medidas ordinales más generales de la calidad de la sesión: sin aprendizaje, brecha aclarada, explicada, puenteada. |Categórica |
+| consolidated_session_category | Medidas ordinales generales de la calidad de la sesión: sin aprendizaje, brecha aclarada, explicada, puenteada. |Categórica |
 |student_complained | Indica si el alumno se quejó o no de características específicas del servicio. | Booleano |
 | student_complained_clarity | Indica si el alumno se quejó o no de características específicas del servicio: claridad | Booleano |
 |student_complained_speed | Indica si el alumno se quejó o no de características específicas del servicio: velocidad.| Booleano |
@@ -42,7 +40,6 @@ La variable objetivo es student_rating_cat, a la cual la definimos como una vari
 | session_tag_student_left |El tutor marcó la sesión cuando el alumno abandonó la sesión. | Booleano | 
 |session_tag_student_no_engaging | El tutor marcó la sesión porque el estudiante no coopera. | Booleano |
 | session_tag_used_whiteboard |El tutor marcó la sesión como sesión con pizarra. | Booleano |
-| student_rating | Calificación de 1 a 5 estrellas de la calidad de la sesión por parte del estudiante. | Entero Ordinal |
 |length_of_session | Duración de la sesión en  segundos. |Flotante |
 | avg_tutor_response_time | Número medio de segundos desde la expresión del alumno hasta la declaración del tutor. | Flotante |
 | subject |Matemáticas, Física, Química. |Categórica |
@@ -66,7 +63,7 @@ La variable objetivo es student_rating_cat, a la cual la definimos como una vari
 |Atributo | Descripción | Tipo de dato |
 | -------- | -------- | -------- |
 | nturnos_tutor | Número de turnos del tutor. | Entero |
-| nturnos_student | Número de turnos del estudiante. | |Entero |
+| nturnos_student | Número de turnos del estudiante. |Entero |
 | twlen_tutor | Cantidad de palabras totales de tutor por diálogo. | Entero  |
 | twlen_student  | Cantidad de palabras totales del estudiante por diálogo.  | Entero  |
  |avtwlen_tutor  | Promedio de la cantidad de palabras por turno del tutor.  | Flotante  

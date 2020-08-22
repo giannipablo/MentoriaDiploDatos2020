@@ -8,7 +8,7 @@ El conjunto de datos completo tiene 18 mil diálogos que suman 7 mil horas. Como
 
 
 ## **2. ¿Cuál es la variable objetivo que hay que predecir? ¿Qué significado tiene? ¿Cómo la definieron de forma binaria?**
-La variable objetivo es student_rating_cat, a la cual la definimos como una variable binaria que representa la satisfacción o insatisfacción del estudiante luego de una sesión con el tutor. El éxito del diálogo representa/conlleva que el estudiante quedó conforme con la labor del tutor, teniendo en cuenta que la conformidad es una cualidad subjetiva que depende del criterio del estudiante. En el conjunto de datos a la variable objetivo la derivamos del puntaje asignado por el estudiante al diálogo con el tutor. La variable puede tomar valores enteros en el rango del 1 al 5. Para binarizarla consideramos los casos con calificación en el rango 1 al 2 inclusive como caso/clase negativa, los casos con calificación en el rango 4 al 5 inclusive como caso/clase positiva mientras que los casos con calificación igual a 3 serán considerados neutros, y no serán tenidos en cuenta en el análisis. 
+La variable objetivo es **student_rating**, a la cual la definimos como una variable binaria que representa la satisfacción o insatisfacción del estudiante luego de una sesión con el tutor. El éxito del diálogo representa/conlleva que el estudiante quedó conforme con la labor del tutor, teniendo en cuenta que la conformidad es una cualidad subjetiva que depende del criterio del estudiante. En el conjunto de datos a la variable objetivo la derivamos del puntaje asignado por el estudiante al diálogo con el tutor. La variable puede tomar valores enteros en el rango del 1 al 5. Para binarizarla consideramos los casos con calificación en el rango 1 al 2 inclusive como caso/clase negativa, los casos con calificación en el rango 4 al 5 inclusive como caso/clase positiva mientras que los casos con calificación igual a 3 serán considerados neutros, y no serán tenidos en cuenta en el análisis. 
 
 
 
@@ -40,7 +40,6 @@ La variable objetivo es student_rating_cat, a la cual la definimos como una vari
 | session_tag_student_left |El tutor marcó la sesión cuando el alumno abandonó la sesión. | Booleano | 
 |session_tag_student_no_engaging | El tutor marcó la sesión porque el estudiante no coopera. | Booleano |
 | session_tag_used_whiteboard |El tutor marcó la sesión como sesión con pizarra. | Booleano |
-| student_rating | Calificación de 1 a 5 estrellas de la calidad de la sesión por parte del estudiante. | Entero Ordinal |
 |length_of_session | Duración de la sesión en  segundos. |Flotante |
 | avg_tutor_response_time | Número medio de segundos desde la expresión del alumno hasta la declaración del tutor. | Flotante |
 | subject |Matemáticas, Física, Química. |Categórica |

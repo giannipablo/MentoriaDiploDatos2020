@@ -64,7 +64,7 @@ La variable objetivo es student_rating_cat, a la cual la definimos como una vari
 |Atributo | Descripción | Tipo de dato |
 | -------- | -------- | -------- |
 | nturnos_tutor | Número de turnos del tutor. | Entero |
-| nturnos_student | Número de turnos del estudiante. | |Entero |
+| nturnos_student | Número de turnos del estudiante. |Entero |
 | twlen_tutor | Cantidad de palabras totales de tutor por diálogo. | Entero  |
 | twlen_student  | Cantidad de palabras totales del estudiante por diálogo.  | Entero  |
  |avtwlen_tutor  | Promedio de la cantidad de palabras por turno del tutor.  | Flotante  

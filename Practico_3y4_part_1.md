@@ -26,7 +26,8 @@ La variable objetivo es **student_rating**, a la cual la definimos como una vari
 | feedback_score | Puntaje de la calidad de la sesión asignada por el estudiante, puede contener valores entre 0 y 1. | Flotante [0,1] |
 | wait_time | Tiempo de espera del estudiante antes de conectar con un tutor, en segundos. | Flotante |
 | ended_by_reason | Acción final sobre cómo terminó la sesión (quién la terminó y cómo). | Categórica |
-| consolidated_session_category | Medidas ordinales de la calidad de la sesión: sin aprendizaje, brecha aclarada, explicada, puenteada. |Categórica |
+| session_category | Categorizacion pormenorizada del grado de aprendizaje del estudiante: falso, brecha aclarada, explicada, soslayada, no se envia mensaje, sin conexión y sin reclamo. | Categórica |
+| consolidated_session_category | Medidas ordinales de la calidad de la sesión: problemas de conexión, sin aprendizaje, brecha aclarada, explicada, soslayada, no se envia mensaje. |Categórica |
 |student_complained | Indica si el alumno se quejó o no de características específicas del servicio. | Booleano |
 | student_complained_clarity | Indica si el alumno se quejó o no de características específicas del servicio: claridad | Booleano |
 |student_complained_speed | Indica si el alumno se quejó o no de características específicas del servicio: velocidad.| Booleano |

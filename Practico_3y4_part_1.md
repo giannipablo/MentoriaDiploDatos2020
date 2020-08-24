@@ -75,37 +75,35 @@ La variable objetivo es **student_rating**, a la cual la definimos como una vari
 
 
 
-| Atributos |
-| -------- | 
-| tutor_age     | 
-| session_tag_no_material |
-|session_tag_student_left |
-| session_tag_student_no_engaging |
-| student_complained |
-| student_complained_clarity |
-| student_complained_speed |
-| student_complained_subject |
-| student_complained_other |
-| session_tag_cheating |
-| session_tag_inappropriate |
-| session_tag_other_subject |
-| session_tag_no_material |
-| session_tag_student_left |
-| session_tag_student_no_engaging 
+| Atributos | Criterio de selección |
+| -------- | -------- | 
+| tutor_age     | La edad podría tener impacto en la experiencia y predisposición del tutor |
+| session_tag_no_material | Debido a que son atributos descriptivos del contexto de la sesión podrían impactar en la calificación del estudiante |
+| session_tag_student_left | Debido a que son atributos descriptivos del contexto de la sesión podrían impactar en la calificación del estudiante |
+| session_tag_student_no_engaging | Debido a que son atributos descriptivos del contexto de la sesión podrían impactar en la calificación del estudiante |
+| session_tag_cheating | Debido a que son atributos descriptivos del contexto de la sesión podrían impactar en la calificación del estudiante |
+| session_tag_inappropriate | Debido a que son atributos descriptivos del contexto de la sesión podrían impactar en la calificación del estudiante |
+| session_tag_other_subject | Debido a que son atributos descriptivos del contexto de la sesión podrían impactar en la calificación del estudiante |
+| student_complained | Si existieron quejas del estudiante estas pueden haber tenido un impacto en la calificación del estudiante |
+| student_complained_clarity | Si existieron quejas del estudiante estas pueden haber tenido un impacto en la calificación del estudiante |
+| student_complained_speed | Si existieron quejas del estudiante estas pueden haber tenido un impacto en la calificación del estudiante |
+| student_complained_subject | Si existieron quejas del estudiante estas pueden haber tenido un impacto en la calificación del estudiante |
+| student_complained_other | Si existieron quejas del estudiante estas pueden haber tenido un impacto en la calificación del estudiante |
+
 
 ### Atributos relativos a los diálogos entre tutor y estudiante
 
 
+| Atributo|  Criterio de selección |
+| -------- | -------- | 
+| nturnos_tutor | La cantidad de turnos empleados por el tutor puede representar el grado de interacción con el estudiante |
+| nturnos_student | La cantidad de turnos empleados por el estudiante puede representar el grado de interacción con el tutor |
+| twlen_tutor | La longitud de los dialogos podria representar una metrica de esfuerzo en la sesión  que impacta en la calificación otorgada |
+| twlen_student |  La longitud de los dialogos podria representar una metrica de esfuerzo en la sesión  que impacta en la calificación otorgada |
+| avtwlen_tutor | La cantidad de palabras empleadas puede representar la locuacidad |
+| avtwlen_student |  La cantidad de palabras empleadas puede representar la locuacidad |
+| text | Las palabras empleadas desde la perspectiva del Procesamiento del Lenguaje Natural pueden ser un reflejo de la satisfacción del estudiante |
 
-| Atributo| 
-| -------- | 
-| nturnos_tutor | 
-| nturnos_student |
-| twlen_tutor |
-| twlen_student |
-| avtwlen_tutor |
-| avtwlen_student |
-| text |
 
 
 

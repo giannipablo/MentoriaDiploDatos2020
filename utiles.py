@@ -13,6 +13,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import precision_recall_curve
+from sklearn.metrics import average_precision_score
 
 ############################################################################
 def basic_metrics(y_real, y_pred, name='Train'):
@@ -68,10 +69,13 @@ def plot_roc_pr(y_real, y_pred, y_score, Title='', x_text=0.4, y_text=0.2, size_
     plt.ylim([-0.05,1.05])
     plt.grid(True)
     
+    
     ax2 = plt.subplot(1,2,2)
     PR  = precision_recall_curve(y_real, y_score)
     
     plt.plot(PR[1], PR[0], '--', ms=ms, color=colorP, label=label)
+    plt.text(x_text, y_text, f'Precisión promedio: {average_precision_score(y_real, y_score):.3f}', weight='bold',
+             size=12, bbox=dict(boxstyle="round", ec=(0.4, 0.7, 0.9), fc=colorP))
     
     plt.title('PR', fontsize=size_text)
     plt.xlabel('Recall', fontsize=size_text)

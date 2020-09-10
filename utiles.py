@@ -1,3 +1,10 @@
+# Generales
+import os
+import pandas as pd
+import numpy as np
+from ast import literal_eval
+
+
 # Figuras
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -86,3 +93,26 @@ def plot_roc_pr(y_real, y_pred, y_score, Title='', x_text=0.4, y_text=0.2, size_
     
     return plt
     
+
+############################################################################
+def ablation(df, tokeep=1.0, path=None):
+    new_indexes = list()
+    for si in df.session_id.unique():
+        indexes = df[df.session_id==si].index
+        N = np.ceil(indexes.shape[0]*tokeep).astype(int)-1
+        new_indexes += list(indexes[-N:])
+
+    dfo = df.loc[new_indexes]
+    if path:
+        dfo.to_csv(path)
+
+    return dfo
+
+
+############################################################################
+def student_rating_category(x): 
+    if x <= 2:
+        return 0   
+    if x >= 4:
+        return 1
+    return 'neutra'

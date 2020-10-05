@@ -116,3 +116,18 @@ def student_rating_category(x):
     if x >= 4:
         return 1
     return 'neutra'
+
+
+############################################################################
+def print_some_info(x):
+    print(f'El conjunto de datos posee {x.shape[0]} filas y {x.shape[1]} columnas')
+    print(x.info())
+
+
+# def convert_emojis(text):
+#     text0 = [t for t in re.findall(r'\\x..\\x..\\x..\\x..', str(text.encode()))]
+#     text0 = [''.join(t.split('\\x')[1:]) for t in text0]
+#     text0 = [bytes.fromhex(t).decode() for t in text0 if t[0]=='f']
+#     text0 = [UNICODE_EMO[t] for t in text0 if t in UNICODE_EMO]
+#     text0 = ' '.join(text0)
+#     return text0

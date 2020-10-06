@@ -1,5 +1,6 @@
 # Generales
 import os
+import re
 import pandas as pd
 import numpy as np
 from ast import literal_eval
@@ -21,6 +22,11 @@ from sklearn.metrics import roc_curve
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import precision_recall_curve
 from sklearn.metrics import average_precision_score
+
+# Liberria para el manejo de emojis y emoticones
+import emot
+from emot.emo_unicode import UNICODE_EMO, EMOTICONS
+
 
 ############################################################################
 def basic_metrics(y_real, y_pred, name='Train'):
@@ -124,10 +130,25 @@ def print_some_info(x):
     print(x.info())
 
 
-# def convert_emojis(text):
-#     text0 = [t for t in re.findall(r'\\x..\\x..\\x..\\x..', str(text.encode()))]
-#     text0 = [''.join(t.split('\\x')[1:]) for t in text0]
-#     text0 = [bytes.fromhex(t).decode() for t in text0 if t[0]=='f']
-#     text0 = [UNICODE_EMO[t] for t in text0 if t in UNICODE_EMO]
-#     text0 = ' '.join(text0)
-#     return text0
+############################################################################
+def convert_emojis(text):
+    """Funcion para convertir emojis a palabras"""
+    text0 = [t for t in re.findall(r'\\x..\\x..\\x..\\x..', str(text.encode()))]
+    text0 = [''.join(t.split('\\x')[1:]) for t in text0]
+    text0 = [bytes.fromhex(t).decode() for t in text0 if t[0]=='f']
+    text0 = [UNICODE_EMO[t] for t in text0 if t in UNICODE_EMO]
+    text0 = ' '.join(text0)
+    return text0 if text0 else text
+
+
+############################################################################
+def convert_emoticons(text):
+    """Funcion para convertir emoticones a palabras"""
+#     OUREMOTIC = dict([(e, f":{EMOTICONS[e].lower().split(',')[0].replace('or ','').replace(' ','_')}:") for e in EMOTICONS.keys()])
+    try:
+        text0 = emot.emoticons(text)
+        if text0['flag']:
+            return ':'+text0['mean'][0].replace(' ', '_').lower()+':'
+        return text
+    except Exception as e:
+        return text

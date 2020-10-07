@@ -125,9 +125,21 @@ def student_rating_category(x):
 
 
 ############################################################################
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 def print_some_info(x):
-    print(f'El conjunto de datos posee {x.shape[0]} filas y {x.shape[1]} columnas')
+    print(f'{bcolors.OKGREEN}El conjunto de datos posee {x.shape[0]} filas y {x.shape[1]} columnas{bcolors.ENDC}')
+    print(f'{bcolors.OKBLUE}')
     print(x.info())
+    print(f'{bcolors.ENDC}')
 
 
 ############################################################################

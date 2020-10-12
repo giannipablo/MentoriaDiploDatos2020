@@ -1,3 +1,4 @@
+# **Práctico 5 (Parte 1): Descripción de los Datos y la Tarea**
 
 
 ##  **1. Ir a leer 15 ejemplos de diálogos clasificados de forma negativa y 5 positivos y copiar palabras, frases o describir otras características que les llamaron la atención en los diálogos negativos.**

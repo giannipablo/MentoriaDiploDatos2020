@@ -121,7 +121,7 @@ Características notables observamos:
     ...
     -tutor: Hello there Joe !
     -student:  I like you
-    -tutor: Welcome to Yup ! :)
+    -tutor: Welcome to *** ! :)
     -tutor: Thank you ! How can I help you ?
     -tutor: Do you have a math problem that you need help with ?
     -student: <url>
